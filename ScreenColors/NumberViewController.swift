@@ -9,19 +9,21 @@
 import UIKit
 
 class NumberViewController: UIViewController {
+    
+    let label = UILabel(frame: CGRect(x: 0, y: 0, width: 160, height: 80))
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.addSubview(label)
         //label.textColor = UIColor.white
         label.textColor = .white
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 64)
         label.center = view.center
-        
-
-        // Do any additional setup after loading the view.
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,14 +33,10 @@ class NumberViewController: UIViewController {
         }
     }
     
+    
     @IBAction func done(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
+        
+        tabBarController?.selectedIndex = 1
+        //navigationController?.popToRootViewController(animated: true)
     }
-    
-    
-    let label = UILabel(frame: CGRect(x: 0, y: 0, width: 160, height: 80))
-    
-
-    
-
 }
